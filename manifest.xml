@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>Table Data Module</name>
+		<description>Joomla! Table Data Module</description>
+		<element>mod_tabledata</element>
+		<type>module</type>
+		<version>1.0</version>
+		<client>site</client>
+		<infourl title="Table Data Module">https://github.com/bascherz/Table-Data-Module/releases/tag/1.0</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/bascherz/Table-Data-Module/mod_tabledata_1.0.zip</downloadurl>
+		</downloads>
+		<targetplatform name="joomla" version="3.[6789]" />
+	</update>
+</updates>

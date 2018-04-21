@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Table Data</name>
+    <author>Bruce Scherzinger</author>
+    <version>1.0.0</version>
+    <description>Extracts data from the database and replaces field data in an HTML structure.</description>
+    <files>
+        <filename>mod_tabledata.xml</filename>
+        <filename module="mod_tabledata">mod_tabledata.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+				<field
+					name="prepare_content"
+					type="radio"
+					label="Prepare Content:"
+					description="Optionally prepare the content with the Joomla content plugins."
+					class="btn-group btn-group-yesno"
+					default="0"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field
+                    name="fieldnames"
+                    description="Enter the field names to be returned from your query separated by whitespace."
+                    type="editor"
+                    editor="None"
+                    height="60"
+                    width="800"
+                    default=""
+                    label="Field Names" />
+                <field
+                    name="tablequery"
+                    description="MySQL query that returns fields with the names provided above"
+                    type="editor"
+                    editor="None"
+                    height="80"
+                    width="800"
+                    default=""
+                    label="MySQL Query" />
+                <field
+                    name="errormessage"
+                    description="HTML to output if the query returns nothing."
+                    type="editor"
+                    editor="None"
+                    height="40"
+                    width="800"
+                    default=""
+                    filter="raw"
+                    label="Error Message:" />
+                <field
+                    name="tablehtml"
+                    description="HTML code containing placeholders for where to insert data from your query. Put field names in curly braces like {fieldname} where you want the data values."
+                    type="editor"
+                    filter="safehtml"
+                    default=""
+                    height="40"
+                    label="HTML Code" />
+            </fieldset>
+        </fields>
+    </config>
+    <install>
+    </install>
+    <uninstall>
+    </uninstall>
+    <updateservers>
+        <server type="extension" name="Table Data Module Update Site">https://raw.githubusercontent.com/bascherz/Table-Data-Module/master/manifest.xml</server>
+    </updateservers>
+</extension>
